@@ -1,0 +1,13 @@
+.idea
+*.swp
+.DS_Store
+__pycache__/
+
+tests/test_result.json
+tests/report.json
+free_response/plots/*.png
+free_response/*.png
+free_response/q1_*.csv
+!free_response/demo_plot.png
+
+data/hw2_project.csv
