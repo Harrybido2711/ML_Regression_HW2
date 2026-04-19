@@ -1,14 +1,16 @@
 # HW 2: Polynomial Regression, Logistic Regression, and Perceptron
 
-There are 20 points possible for this assignment. 2 points are for the setup,
-10 points for the code, and 8 points for the free-response questions. The setup
-portion is due earlier than the other pieces -- all deadlines are on Canvas.
-Please carefully read this entire README before starting the assignment.
+There are 25 points possible for this assignment. 2 points are for the setup,
+10 points for the code, 8 points for the free-response questions, and 5 points
+for the mini-project. The setup portion is due earlier than the other pieces --
+all deadlines are on Canvas. Please carefully read this entire README before
+starting the assignment.
 
 ## What's changed since HW1?
 
 - There is no `password` file for this homework.
-- You should reuse your conda environment from HW1.
+- If you used a conda environment for HW1, please reuse that. If you used `uv`,
+  we've provided the same `uv.lock` and `pyproject.toml` files as in HW1.
 - There are several functions that make it trivially easy to implement linear
   regression. Please do not use those. You should be computing at least one
   matrix inverse in your implementation.
@@ -62,9 +64,10 @@ deadline. However:
 
 - Each student gets four late days to use across the entire quarter. If you
   want to use late days, use the [late day assignment
-  ](https://canvas.northwestern.edu/courses/252410/assignments/1757667) on
+  ](https://canvas.northwestern.edu/courses/252410/assignments/1757666) on
   Canvas.
-- You can use at most two late days per assignment.
+- You can use at most two late days per assignment. Late days cannot be used
+  for setup, and apply equally to coding, free-response, and projects.
 - If you have a personal emergency, please ask for help. You do not have to
   share any personal information with me, but I will ask you to get in touch
   with the dean who oversees your student services to coordinate
