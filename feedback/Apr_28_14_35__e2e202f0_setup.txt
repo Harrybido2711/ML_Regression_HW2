@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.1, pytest-8.3.4, pluggy-1.5.0
+rootdir: /workspace
+configfile: pyproject.toml
+collected 14 items / 13 deselected / 1 selected
+tests/test_a_setup.py .
+======================
+Output of autograder
+======================
+# of tests:	1/1 tests passed
+Overall score:	100/100
+======================
+SKIP test_imports
+PASS: test_setup
+SKIP test_mean_squared_error
+SKIP test_equalized_odds_difference
+SKIP test_demographic_parity_difference
+SKIP test_generate_random_numbers
+SKIP test_generate_regression_data
+SKIP test_polynomial_regression_basics
+SKIP test_polynomial_regression_full
+SKIP test_logreg
+SKIP test_polynomial_logreg
+SKIP test_perceptron
+SKIP test_polynomial_perceptron
+SKIP test_custom_transform
+======================
+======================= 1 passed, 13 deselected in 3.98s =======================
