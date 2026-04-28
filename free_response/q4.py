@@ -18,7 +18,6 @@ def main(n_folds=9, show=True, save=True):
     # Load data and initialize three models
     X, y, _ = load_data("data/polynomial.csv")
     logreg = LogisticRegression(max_iter=2000)
-
     n_col = 3
     n_row = int(np.ceil(n_folds / n_col))
     fig, axes = plt.subplots(
