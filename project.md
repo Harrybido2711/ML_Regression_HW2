@@ -66,7 +66,7 @@ Your report should not contain:
 We have uploaded a `hw2_project.csv` dataset in the [Homework Handouts
 folder](https://canvas.northwestern.edu/courses/252410/files/folder/Homework%20Handouts)
 on Canvas. The goal of this project is to train regression models to predict
-the `class` variable from the 23 feature (`X1` through `X23`). We are keeping
+the `class` variable from the 24 feature (`X1` through `X24`). We are keeping
 the origin of the dataset a secret, but it has been widely used as a benchmark
 for evaluating machine learning methods in a biochemical domain. A recent
 published paper using a version of this dataset achieved a root mean squared
@@ -85,10 +85,10 @@ set available only on the autograder. Your written report must discuss the
 performance of the your trained models on both the train and test sets.
 
 To submit a model to be evaluated on the test set, you must push a python
-script to the `models/` folder. If you upload a file named `my_model.py`,
+script to the `project/` folder. If you upload a file named `my_model.py`,
 we will run it from the root of your repository with:
 
-`python project/my_model.py hw1_test_set.csv predictions.csv`
+`python -m project.my_model hw1_test_set.csv predictions.csv`
 
 The `hw2_test_set.csv` will be a local path to the test set, which will be in
 the same format as the provided `hw2_project.csv` train set. Make sure you
@@ -105,7 +105,11 @@ expected behavior.
 We will run the model evaluation script at most once every hour, and you may
 upload at most one model per hour. Your model script must take at most one
 minute to produce its test set predictions. The test set is roughly one third
-the size of the training set.
+the size of the training set. Note that if you push multiple python scripts at
+the same time, the leaderboard autograder will arbitrarily choose (only) one of
+them to evaluate. To ensure the autograder evaluates the file you want to, have
+it be the most recently-modified `.py` file in the `project` folder.  We are
+using Python's module structure so you can (for example) import from `src`.
 
 Every time the autograder evaluates models, it will create a new csv file of
 the results of all students' models. These results will be public to all
