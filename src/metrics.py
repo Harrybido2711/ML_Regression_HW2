@@ -21,8 +21,7 @@ def mean_squared_error(predictions, targets):
     """
 
     assert predictions.shape == targets.shape
-
-    raise NotImplementedError
+    return np.mean((predictions - targets) ** 2)
 
 
 def demographic_parity_difference(confusion_matrix_a, confusion_matrix_b):
@@ -58,8 +57,10 @@ def demographic_parity_difference(confusion_matrix_a, confusion_matrix_b):
     mat_a_shape = confusion_matrix_a.shape
     assert mat_a_shape == confusion_matrix_b.shape
     assert mat_a_shape == (2, 2)
-
-    raise NotImplementedError
+    demographic_parity_a = confusion_matrix_a[:, 1].sum()/ confusion_matrix_a.sum()
+    demographic_parity_b = confusion_matrix_b[:, 1].sum()/ confusion_matrix_b.sum()
+    difference = abs(demographic_parity_a - demographic_parity_b)
+    return difference
 
 
 def equalized_odds_difference(confusion_matrix_a, confusion_matrix_b):
