@@ -98,5 +98,10 @@ def equalized_odds_difference(confusion_matrix_a, confusion_matrix_b):
     mat_a_shape = confusion_matrix_a.shape
     assert mat_a_shape == confusion_matrix_b.shape
     assert mat_a_shape == (2, 2)
-
-    raise NotImplementedError
+    #calculate the recall rate
+    true_positive_a =  confusion_matrix_a[1,1]/  confusion_matrix_a[1,:].sum()
+    false_positive_a = confusion_matrix_a[0,1] / confusion_matrix_a[0,:].sum()
+    true_positive_b =  confusion_matrix_b[1,1]/  confusion_matrix_b[1,:].sum()
+    false_positive_b = confusion_matrix_b[0,1] / confusion_matrix_b[0,:].sum()
+    eod = max(abs(true_positive_a -  true_positive_b), abs(false_positive_a - false_positive_b))
+    return eod
