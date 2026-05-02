@@ -1,0 +1,79 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.1, pytest-8.3.4, pluggy-1.5.0
+rootdir: /workspace
+configfile: pyproject.toml
+collected 14 items
+tests/test_a_environment.py .                                            [  7%]
+tests/test_a_setup.py .                                                  [ 14%]
+tests/test_b_metrics.py ...                                              [ 35%]
+tests/test_c_generate_data.py FF                                         [ 50%]
+tests/test_d_logreg.py FF                                                [ 64%]
+tests/test_d_perceptron.py FF                                            [ 78%]
+tests/test_d_polynomial_regression.py FF                                 [ 92%]
+tests/test_f_custom_transform.py F                                       [100%]
+=================================== FAILURES ===================================
+________________________ test_generate_regression_data _________________________
+>       x, y = generate_regression_data(0, 100, 0)
+tests/test_c_generate_data.py:17:
+>       raise NotImplementedError
+E       NotImplementedError
+src/generate_regression_data.py:58: NotImplementedError
+_________________________ test_generate_random_numbers _________________________
+>                   x, coefs, noise = generate_random_numbers(degree, n, amount_of_noise)
+tests/test_c_generate_data.py:89:
+>       raise NotImplementedError
+E       NotImplementedError
+src/generate_regression_data.py:27: NotImplementedError
+_________________________________ test_logreg __________________________________
+>       num_iter_to_converge = model.fit(features, targets)
+tests/test_d_logreg.py:11:
+>       raise NotImplementedError
+E       NotImplementedError
+src/logistic_regression.py:88: NotImplementedError
+____________________________ test_polynomial_logreg ____________________________
+>       num_iter = logreg.fit(features, targets)
+tests/test_d_logreg.py:34:
+>       raise NotImplementedError
+E       NotImplementedError
+src/logistic_regression.py:88: NotImplementedError
+_______________________________ test_perceptron ________________________________
+>       num_iter_to_converge = p.fit(features, targets)
+tests/test_d_perceptron.py:11:
+>       raise NotImplementedError
+E       NotImplementedError
+src/perceptron.py:90: NotImplementedError
+__________________________ test_polynomial_perceptron __________________________
+>       num_iter = p.fit(features, targets)
+tests/test_d_perceptron.py:36:
+>       raise NotImplementedError
+E       NotImplementedError
+src/perceptron.py:90: NotImplementedError
+______________________ test_polynomial_regression_basics _______________________
+>       x, y = generate_regression_data(3, 10, amount_of_noise=1)
+tests/test_d_polynomial_regression.py:9:
+>       raise NotImplementedError
+E       NotImplementedError
+src/generate_regression_data.py:58: NotImplementedError
+_______________________ test_polynomial_regression_full ________________________
+>               x, y = generate_regression_data(degree, amount, amount_of_noise=0.0)
+tests/test_d_polynomial_regression.py:42:
+>       raise NotImplementedError
+E       NotImplementedError
+src/generate_regression_data.py:58: NotImplementedError
+____________________________ test_custom_transform _____________________________
+>       new_X = custom_transform(X)
+tests/test_f_custom_transform.py:21:
+>       raise NotImplementedError
+E       NotImplementedError
+src/custom_transform.py:32: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_c_generate_data.py::test_generate_regression_data - NotImpl...
+FAILED tests/test_c_generate_data.py::test_generate_random_numbers - NotImple...
+FAILED tests/test_d_logreg.py::test_logreg - NotImplementedError
+FAILED tests/test_d_logreg.py::test_polynomial_logreg - NotImplementedError
+FAILED tests/test_d_perceptron.py::test_perceptron - NotImplementedError
+FAILED tests/test_d_perceptron.py::test_polynomial_perceptron - NotImplemente...
+FAILED tests/test_d_polynomial_regression.py::test_polynomial_regression_basics
+FAILED tests/test_d_polynomial_regression.py::test_polynomial_regression_full
+FAILED tests/test_f_custom_transform.py::test_custom_transform - NotImplement...
+========================= 9 failed, 5 passed in 5.31s ==========================
