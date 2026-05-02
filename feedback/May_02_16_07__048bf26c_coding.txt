@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.1, pytest-8.3.4, pluggy-1.5.0
+rootdir: /workspace
+configfile: pyproject.toml
+collected 14 items
+tests/test_a_environment.py F                                            [  7%]
+tests/test_a_setup.py .                                                  [ 14%]
+tests/test_b_metrics.py ...                                              [ 35%]
+tests/test_c_generate_data.py ..                                         [ 50%]
+tests/test_d_logreg.py ..                                                [ 64%]
+tests/test_d_perceptron.py ..                                            [ 78%]
+tests/test_d_polynomial_regression.py ..                                 [ 92%]
+tests/test_f_custom_transform.py F                                       [100%]
+=================================== FAILURES ===================================
+_________________________________ test_imports _________________________________
+>                               assert line.strip() == docstring, msg
+E                               AssertionError: Don't use polynomial in line 55 of /workspace/src/regression.py
+E                               assert '# use the fo...al regression' == 'Do not use t...attr, globals'
+E
+E                                 - Do not use these numpy or internal functions: polynomial, polyfit, polyval, __dict__, lstsq, getattr, globals
+E                                 + # use the formula for polynomial regression
+tests/test_a_environment.py:51: AssertionError
+____________________________ test_custom_transform _____________________________
+>       new_X = custom_transform(X)
+tests/test_f_custom_transform.py:21:
+>       raise NotImplementedError
+E       NotImplementedError
+src/custom_transform.py:32: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_a_environment.py::test_imports - AssertionError: Don't use ...
+FAILED tests/test_f_custom_transform.py::test_custom_transform - NotImplement...
+========================= 2 failed, 12 passed in 6.87s =========================
