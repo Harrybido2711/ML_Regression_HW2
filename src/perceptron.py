@@ -87,7 +87,15 @@ class Perceptron():
             stop: Boolean indicating whether the Perceptron has converged
             (Do not return the weights; update those in-place)
         """
-        raise NotImplementedError
+        converged = True
+        N = X.shape[0]
+        for i in range(N):
+            pred = np.sign(X[i] @ self.weights)
+            # if predict wrong
+            if pred != y[i]:
+                converged = False
+                self.weights = self.weights + self.learning_rate * y[i] * X[i] # the direction is up to y[i]
+        return converged
 
     def predict(self, X):
         """
@@ -107,4 +115,17 @@ class Perceptron():
         """
 
         X = self.add_intercept(X)
-        raise NotImplementedError
+
+        #compute the result
+        scores = X @ self.weights
+        
+        #turn the scores to -1 or 1 based on sign
+        preds = np.sign(scores)
+
+        # scale and reshape
+        return self.map_pm1_to_01(preds).reshape(-1, 1)
+    
+
+
+
+        

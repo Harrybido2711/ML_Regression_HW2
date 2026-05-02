@@ -115,8 +115,10 @@ class LogisticRegression():
             predictions (np.ndarray): Output of trained model on features,
                 with predictions as {0, 1} labels.
         """
+        
         X = self.add_intercept(X)
         h = sigmoid(X @ self.weights)
+        # if any entry >= 0.5, then return true (1), vice versa
         return (h >= 0.5).astype(int)
 
         
