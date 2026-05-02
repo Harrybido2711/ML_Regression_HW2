@@ -85,7 +85,21 @@ class LogisticRegression():
             stop: Boolean indicating whether the model has converged
             (Do not return the weights; update those in-place)
         """
-        raise NotImplementedError
+        N = X.shape[0] #the number of features
+
+        # h(X) = sigmoid(X @ w), formula (4) in pdf
+        h = sigmoid(X @ self.weights)
+
+        #calculate the gradient, formula (10) in pdf
+        gradient = X.T @ (h - y) / N
+
+        #update the weights
+        self.weights = self.weights - self.learning_rate * gradient
+
+        # return true if the gradient is small enough
+        return np.linalg.norm(gradient) < 1e-4
+
+
 
     def predict(self, X):
         """
@@ -101,6 +115,9 @@ class LogisticRegression():
             predictions (np.ndarray): Output of trained model on features,
                 with predictions as {0, 1} labels.
         """
-
         X = self.add_intercept(X)
-        raise NotImplementedError
+        h = sigmoid(X @ self.weights)
+        return (h >= 0.5).astype(int)
+
+        
+    
