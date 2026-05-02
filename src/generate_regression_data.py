@@ -23,8 +23,21 @@ def generate_random_numbers(degree, N, amount_of_noise):
     Note that noise should have std `amount_of_noise`
         which we'll later multiply by `np.std(y)`
     """
+    #  Use src.random to generate `explanatory variable x`: an array of shape
+    # (N, 1) that contains floats chosen uniformly at random between -1 and 1.
+    x = src.random.uniform(low=-1, high=1, size=(N, 1))
+    #Use src.random to generate `coefficient value coefs`: an array of shape
+    #        (degree+1, ) that contains floats chosen uniformly at random
+    #       between -10 and 10.
+    coefs = src.random.uniform(low=-10, high=10, size=(degree + 1,))
 
-    raise NotImplementedError
+    noise = src.random.normal(loc=0, scale=amount_of_noise, size=(N, 1))
+
+    return x, coefs, noise
+
+
+
+    
 
 
 def generate_regression_data(degree, N, amount_of_noise=1.0):
@@ -55,4 +68,14 @@ def generate_regression_data(degree, N, amount_of_noise=1.0):
                         Polynomial of degree 'degree'.
 
     """
-    raise NotImplementedError
+    # fetch the data
+    x, coefs, noise = generate_random_numbers(degree, N, amount_of_noise)
+
+    # calculate the the y values values
+    y0 = np.zeros((N,1))
+    for i in range(degree + 1):
+        y0 = y0 + coefs[i] * (x ** i) # using broadcast
+    
+    y = y0 + noise * np.std(y0)
+    # return value
+    return x, y
