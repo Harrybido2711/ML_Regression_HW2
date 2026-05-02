@@ -44,7 +44,17 @@ class PolynomialRegression():
         Returns:
             None (saves model weights to `self.weights`)
         """
-        raise NotImplementedError
+        # construct the list of columns based on "features"
+        cols = []
+        for i in range(self.degree + 1):
+            cols.append(features ** i)
+
+        # concetrate the list of column arrays into a matrix
+        X = np.hstack(cols)
+
+        # use the formula for polynomial regression
+        self.weights = np.linalg.pinv(X.T @ X) @ X.T @ targets
+        
 
     def predict(self, features):
         """
@@ -61,4 +71,14 @@ class PolynomialRegression():
         Returns:
             predictions (np.ndarray): array of shape [N, 1] containing real-valued predictions
         """
-        raise NotImplementedError
+        # construct the list of columns based on "features"
+        cols = []
+        for i in range(self.degree + 1):
+            cols.append(features ** i)
+
+        # concetrate the list of column arrays into a matrix
+        X = np.hstack(cols)
+
+        predictions = X @ self.weights 
+        
+        return predictions
