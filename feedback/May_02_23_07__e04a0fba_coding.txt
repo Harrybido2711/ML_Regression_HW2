@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.1, pytest-8.3.4, pluggy-1.5.0
+rootdir: /workspace
+configfile: pyproject.toml
+collected 14 items
+tests/test_a_environment.py .                                            [  7%]
+tests/test_a_setup.py .                                                  [ 14%]
+tests/test_b_metrics.py ...                                              [ 35%]
+tests/test_c_generate_data.py ..                                         [ 50%]
+tests/test_d_logreg.py ..                                                [ 64%]
+tests/test_d_perceptron.py ..                                            [ 78%]
+tests/test_d_polynomial_regression.py ..                                 [ 92%]
+tests/test_f_custom_transform.py F                                       [100%]
+=================================== FAILURES ===================================
+____________________________ test_custom_transform _____________________________
+>       new_X = custom_transform(X)
+tests/test_f_custom_transform.py:21:
+>       raise NotImplementedError
+E       NotImplementedError
+src/custom_transform.py:31: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_f_custom_transform.py::test_custom_transform - NotImplement...
+========================= 1 failed, 13 passed in 7.11s =========================
