@@ -1,0 +1,35 @@
+Predictions (/home/zdw0544/cs349s26/hw2/hw2-Harrybido2711/809A135f04-my_experiment-252d331e.csv) not built:
+
+Traceback (most recent call last):
+
+  File "/workspace/src/pyplot.py", line 2, in <module>
+
+    import matplotlib
+
+ModuleNotFoundError: No module named 'matplotlib'
+
+
+
+During handling of the above exception, another exception occurred:
+
+
+
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/workspace/project/my_experiment.py", line 6, in <module>
+
+    from src.regression import PolynomialRegression
+
+  File "/workspace/src/__init__.py", line 7, in <module>
+
+    from src.pyplot import plt, matplotlib
+
+  File "/workspace/src/pyplot.py", line 5, in <module>
+
+    import matplotlib
+
+ModuleNotFoundError: No module named 'matplotlib'
