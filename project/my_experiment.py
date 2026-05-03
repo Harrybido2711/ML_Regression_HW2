@@ -1,16 +1,15 @@
 import numpy as np
 import pandas as pd
-import sys
+import os
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import StandardScaler
 from src.regression import PolynomialRegression
-from src.metrics import mean_squared_error
 
 
 def main():
     #read the data file
-    df = pd.read_csv("data/hw2_project.csv")
+    train_csv = os.path.join(os.path.dirname(__file__), "hw2_project.csv")
+    df = pd.read_csv(train_csv)
     # Sanity check -- all the features are there
     columns = set(df.columns.tolist())
     for i in range(1, 25):
