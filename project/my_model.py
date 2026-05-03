@@ -4,8 +4,6 @@ import sys
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
-from src.regression import PolynomialRegression
-from src.metrics import mean_squared_error
 
 
 def main():
