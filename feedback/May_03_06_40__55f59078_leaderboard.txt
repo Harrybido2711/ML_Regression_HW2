@@ -1,0 +1,65 @@
+Predictions (/home/zdw0544/cs349s26/hw2/hw2-Harrybido2711/809A135f04-my_model-55f59078.csv) not built:
+
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/workspace/project/my_model.py", line 35, in <module>
+
+    main()
+
+    ~~~~^^
+
+  File "/workspace/project/my_model.py", line 16, in main
+
+    train_df = pd.read_csv("data/hw2_project.csv")
+
+  File "/usr/local/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+
+    return _read(filepath_or_buffer, kwds)
+
+  File "/usr/local/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+
+  File "/usr/local/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+
+    self._engine = self._make_engine(f, self.engine)
+
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+
+  File "/usr/local/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+
+    self.handles = get_handle(
+
+                   ~~~~~~~~~~^
+
+        f,
+
+        ^^
+
+    ...<6 lines>...
+
+        storage_options=self.options.get("storage_options", None),
+
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    )
+
+    ^
+
+  File "/usr/local/lib/python3.13/site-packages/pandas/io/common.py", line 873, in get_handle
+
+    handle = open(
+
+        handle,
+
+    ...<3 lines>...
+
+        newline="",
+
+    )
+
+FileNotFoundError: [Errno 2] No such file or directory: 'data/hw2_project.csv'
