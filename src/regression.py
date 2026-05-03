@@ -52,7 +52,7 @@ class PolynomialRegression():
         # concetrate the list of column arrays into a matrix
         X = np.hstack(cols)
 
-        # use the formula for polynomial regression
+        # use the formula for closed-formed regression
         self.weights = np.linalg.pinv(X.T @ X) @ X.T @ targets
         
 
@@ -80,5 +80,5 @@ class PolynomialRegression():
         X = np.hstack(cols)
 
         predictions = X @ self.weights 
-        
+
         return predictions
